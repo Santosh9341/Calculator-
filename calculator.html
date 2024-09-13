@@ -1,0 +1,68 @@
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"content="width=device-width">
+        <link rel ="stylesheet"href="cal.css">
+    <title>Page title</title>
+</head>
+<body>
+    <div class="calculator">
+        <input type ="text"placeholder ="0" id="result">
+       <div>
+           <button class="operator" onclick="clearResult('AC')">AC</button>
+             <button class="operator"onclick="deleteResult('DEL')">DEL</button>
+             <button class="operator"onclick="insertvalue('%')">%
+             </button>
+             <button class="operator"onclick="insertvalue('/')">/</button>
+       
+       </div>
+       <div>
+      <button onclick="insertvalue('7')">7</button>
+      <button onclick="insertvalue('8')">8</button>
+      <button onclick="insertvalue('9')">9</button>
+      <button class="operator"onclick="insertvalue('*')">*</button>
+             
+       </div>
+       <div>
+             <button onclick="insertvalue('4')">4</button>
+             <button onclick="insertvalue('5')">5</button>
+             <button onclick="insertvalue('6')">6</button>
+             <button class="operator"onclick="insertvalue('-')">-</button>
+             
+       </div>
+        <div><button onclick="insertvalue('1')">1</button>
+             <button onclick="insertvalue('2')">2</button>
+             <button onclick="insertvalue('3')">3</button>
+             <button class="operator"onclick="insertvalue('+')">+</button>
+          </div>   
+          <div>
+             <button onclick="insertvalue('00')">00</button>
+             <button onclick="insertvalue('0')">0</button>
+             <button onclick="insertvalue('.')">.</button>
+             <button class="equal"onclick="calculate()">=</button>
+             
+          </div>
+    </div>
+    <script>
+        function insertvalue(value){
+            result.value += value;
+        }
+        function clearResult(){
+            result.value='';
+        }
+        function deleteResult(){
+            result.value = result.value.slice(0,-1);
+        }
+        function calculate(){
+            try{result.value = eval(result.value);
+            }catch (error){
+                result.value = 'Error';
+            }
+        }
+    </script>
+ 
+</html>
+</body>
+</html>
